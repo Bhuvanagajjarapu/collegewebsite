@@ -1,6 +1,24 @@
 {
-  "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
+  "/_app": "pages/_app.js",
+  "/Home": "pages/Home.html",
+  "/Login": "pages/Login.html",
+  "/Sidebar": "pages/Sidebar.html",
+  "/about/history": "pages/about/history.html",
+  "/about/values": "pages/about/values.html",
+  "/about/vision": "pages/about/vision.html",
+  "/academics/holidays": "pages/academics/holidays.html",
+  "/branches": "pages/branches.html",
+  "/contact": "pages/contact.html",
+  "/departements/ai-branches": "pages/departements/ai-branches.html",
+  "/departements/cse": "pages/departements/cse.html",
+  "/departements/it": "pages/departements/it.html",
+  "/events/completed": "pages/events/completed.html",
+  "/events/ongoing": "pages/events/ongoing.html",
+  "/faculty/non-teaching": "pages/faculty/non-teaching.html",
+  "/faculty/teaching": "pages/faculty/teaching.html",
+  "/departements/mech": "pages/departements/mech.html",
+  "/": "pages/index.html",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js"
+  "/404": "pages/404.html"
 }
