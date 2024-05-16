@@ -34,4 +34,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-node_modules/
+
+# Ignore large file
+node_modules/@next/swc-win32-x64-msvc/next-swc.win32-x64-msvc.node
