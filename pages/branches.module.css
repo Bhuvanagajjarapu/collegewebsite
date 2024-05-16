@@ -1,0 +1,28 @@
+/* branches.module.css */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: lightgray; /* Change navbar color to grey */
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.closed {
+    transform: translateX(-100%);
+}
+
+.toggleButton {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    color: #333;
+}
+
+.toggleButton span {
+    font-size: 24px;
+    line-height: 1;
+}

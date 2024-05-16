@@ -6,7 +6,6 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="logo">
         <Image src="/logo1.jpeg" alt="Logo" width={100} height={100} />
-        
       </div>
       <ul className="nav-list">
         <li className="nav-item">
@@ -36,16 +35,13 @@ const Navbar = () => {
             <Link href="/departements/it"><a>IT</a></Link>
             <Link href="/departements/ai-branches"><a>AI BRANCHES</a></Link>
             <Link href="/departements/mech"><a>MECH</a></Link>
-            
           </div>
         </li>
-        
         <li className="nav-item dropdown">
           <a href="#" className="dropbtn">Events</a>
           <div className="dropdown-content">
             <Link href="/events/completed"><a>Completed</a></Link>
             <Link href="/events/ongoing"><a>Ongoing</a></Link>
-            
           </div>
         </li>
         <li className="nav-item dropdown">
@@ -56,9 +52,17 @@ const Navbar = () => {
           </div>
         </li>
         <li className="nav-item">
+          <Link href="/branches">
+            <a>Branches</a>
+          </Link>
+        </li>
+        <li className="nav-item">
           <Link href="/contact">
             <a>Contact Us</a>
           </Link>
+        </li>
+        <li className="nav-item">
+          <a href="/Login" className="login-btn">Login</a>
         </li>
       </ul>
 
@@ -87,7 +91,6 @@ const Navbar = () => {
         .nav-item {
           position: relative;
           margin-left: 20px;
-          
         }
 
         .nav-item a {
@@ -126,6 +129,20 @@ const Navbar = () => {
 
         .dropdown:hover .dropdown-content {
           display: block;
+        }
+
+        .login-btn {
+          background-color: red;
+          color: white;
+          border: 1px solid blue;
+          padding: 10px 20px;
+          border-radius: 5px;
+          transition: background-color 0.3s, color 0.3s;
+        }
+
+        .login-btn:hover {
+          background-color: blue;
+          color: white;
         }
       `}</style>
     </nav>
