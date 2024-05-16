@@ -123,4 +123,8 @@ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s 
 var __webpack_exports__ = (__webpack_exec__("./node_modules/next/dist/pages/_document.js"));
 module.exports = __webpack_exports__;
 
+<<<<<<< HEAD
 })();
+=======
+})();
+>>>>>>> 09d56aa25d31349a25ab86abacc134f275ff46d8
