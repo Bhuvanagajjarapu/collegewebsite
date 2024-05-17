@@ -5,64 +5,66 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="logo">
-        <Image src="/logo1.jpeg" alt="Logo" width={100} height={100} />
+        <Image src="/logo1.jpeg" alt="Logo" width={40} height={40} />
       </div>
       <ul className="nav-list">
         <li className="nav-item">
           <Link href="/Home">
-            <a>Home</a>
+            <span className="nav-link">Home</span>
           </Link>
         </li>
         <li className="nav-item dropdown">
-          <a href="#" className="dropbtn">About Us</a>
+          <span className="dropbtn">About Us</span>
           <div className="dropdown-content">
-            <Link href="/about/history"><a>College History</a></Link>
-            <Link href="/about/vision"><a>Vision and Mission</a></Link>
-            <Link href="/about/values"><a>Values</a></Link>
+            <Link href="/about/history"><span className="dropdown-link">College History</span></Link>
+            <Link href="/about/vision"><span className="dropdown-link">Vision and Mission</span></Link>
+            <Link href="/about/values"><span className="dropdown-link">Values</span></Link>
           </div>
         </li>
         <li className="nav-item dropdown">
-          <a href="#" className="dropbtn">Academics</a>
+          <span className="dropbtn">Academics</span>
           <div className="dropdown-content">
-            <Link href="/academics/holidays"><a>Holidays</a></Link>
-            <Link href="/academics/calendar"><a>Academic Calendar</a></Link>
+            <Link href="/academics/holidays"><span className="dropdown-link">Holidays</span></Link>
+            <Link href="/academics/calendar"><span className="dropdown-link">Academic Calendar</span></Link>
           </div>
         </li>
         <li className="nav-item dropdown">
-          <a href="#" className="dropbtn">Departments</a>
+          <span className="dropbtn">Departments</span>
           <div className="dropdown-content">
-            <Link href="/departements/cse"><a>CSE</a></Link>
-            <Link href="/departements/it"><a>IT</a></Link>
-            <Link href="/departements/ai-branches"><a>AI BRANCHES</a></Link>
-            <Link href="/departements/mech"><a>MECH</a></Link>
+            <Link href="/departements/cse"><span className="dropdown-link">CSE</span></Link>
+            <Link href="/departements/it"><span className="dropdown-link">IT</span></Link>
+            <Link href="/departements/ai-branches"><span className="dropdown-link">AI BRANCHES</span></Link>
+            <Link href="/departements/mech"><span className="dropdown-link">MECH</span></Link>
           </div>
         </li>
         <li className="nav-item dropdown">
-          <a href="#" className="dropbtn">Events</a>
+          <span className="dropbtn">Events</span>
           <div className="dropdown-content">
-            <Link href="/events/completed"><a>Completed</a></Link>
-            <Link href="/events/ongoing"><a>Ongoing</a></Link>
+            <Link href="/events/completed"><span className="dropdown-link">Completed</span></Link>
+            <Link href="/events/ongoing"><span className="dropdown-link">Ongoing</span></Link>
           </div>
         </li>
         <li className="nav-item dropdown">
-          <a href="#" className="dropbtn">Faculty</a>
+          <span className="dropbtn">Faculty</span>
           <div className="dropdown-content">
-            <Link href="/faculty/teaching"><a>Teaching</a></Link>
-            <Link href="/faculty/non-teaching"><a>Non-Teaching</a></Link>
+            <Link href="/faculty/teaching"><span className="dropdown-link">Teaching</span></Link>
+            <Link href="/faculty/non-teaching"><span className="dropdown-link">Non-Teaching</span></Link>
           </div>
         </li>
         <li className="nav-item">
           <Link href="/branches">
-            <a>Branches</a>
+            <span className="nav-link">Branches</span>
           </Link>
         </li>
         <li className="nav-item">
           <Link href="/contact">
-            <a>Contact Us</a>
+            <span className="nav-link">Contact Us</span>
           </Link>
         </li>
         <li className="nav-item">
-          <a href="/Login" className="login-btn">Login</a>
+          <Link href="/Login">
+            <span className="login-btn">Login</span>
+          </Link>
         </li>
       </ul>
 
@@ -93,18 +95,12 @@ const Navbar = () => {
           margin-left: 20px;
         }
 
-        .nav-item a {
-          color: white;
-          padding: 16px 20px;
-          text-decoration: none;
-          display: block;
-        }
-
+        .nav-link,
         .dropbtn {
           color: white;
           padding: 16px 20px;
+          cursor: pointer;
           text-decoration: none;
-          display: block;
         }
 
         .dropdown-content {
@@ -116,14 +112,15 @@ const Navbar = () => {
           z-index: 1;
         }
 
-        .dropdown-content a {
+        .dropdown-content .dropdown-link {
           color: black;
           padding: 12px 16px;
           text-decoration: none;
           display: block;
+          transition: background-color 0.3s;
         }
 
-        .dropdown-content a:hover {
+        .dropdown-content .dropdown-link:hover {
           background-color: #ddd;
         }
 
