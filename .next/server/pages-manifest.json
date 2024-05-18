@@ -2,9 +2,10 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/academics/holidays": "pages/academics/holidays.js",
-  "/events/completed": "pages/events/completed.js",
-  "/about/history": "pages/about/history.js",
+  "/": "pages/index.js",
+  "/Login": "pages/Login.js",
+  "/signup": "pages/signup.js",
+  "/faculty/teaching": "pages/faculty/teaching.js",
   "/Home": "pages/Home.js",
-  "/Login": "pages/Login.js"
+  "/events/completed": "pages/events/completed.js"
 }
