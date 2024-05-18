@@ -1,42 +1,76 @@
+// Login.js
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom'; // Import useHistory hook
+import axios from 'axios';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 import styles from './Login.module.css';
 
 export default function Login() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [isChecked, setIsChecked] = useState(false);
-    const history = useHistory(); // Initialize useHistory hook
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isChecked, setIsChecked] = useState(false);
+  const [error, setError] = useState('');
+  const router = useRouter();
 
-    const handleLogin = () => {
-        // Perform validation logic here
-        // For demonstration purposes, check if the email is not empty and password is at least 6 characters long
-        if (email.trim() === '' || password.length < 6) {
-            alert('Please enter valid email and password');
-            return;
-        }
-        console.log('User details:', { email, password, isChecked });
-        // If validation passes, navigate to the home page
-        
-    };
+  const handleLogin = async (e) => {
+    e.preventDefault();
 
-    return (
-        <div className={styles.container}>
-            <div className={styles.left}>
-                <div className={styles.card}>
-                    <h1>Login</h1>
-                    <p>Don't have an account yet? <a href="/signup">Sign up</a></p>
-                    <input type="text" placeholder="Email Address" value={email} onChange={(e) => setEmail(e.target.value)} className={styles.input} />
-                    <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className={styles.input} />
-                    <label>
-                        <input type="checkbox" checked={isChecked} onChange={() => setIsChecked(!isChecked)} /> Remind me
-                    </label>
-                    <button onClick={handleLogin} className={styles.loginButton}>Login</button>
-                </div>
-            </div>
-            <div className={styles.right}>
-                <img src="/login.jpeg" alt="Google" className={styles.googleImage} />
-            </div>
+    // Perform validation logic here
+    if (email.trim() === '' || password.trim() === '') {
+      setError('Please enter both email and password');
+      return;
+    }
+
+    try {
+      // Send login credentials to your API endpoint for validation
+      const response = await axios.post('/api/login', { email, password });
+
+      // If login is successful, redirect to UserDetailsPage
+      if (response.status === 200) {
+        router.push('/UserDetailsPage');
+      }
+    } catch (error) {
+      console.error('Error logging in:', error);
+      setError('Invalid email or password. Please try again.');
+    }
+  };
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.left}>
+        <div className={styles.card}>
+          <h1>Login</h1>
+          <p>Don't have an account yet? <Link href="/signup">Sign up</Link></p>
+          {error && <p className={styles.error}>{error}</p>}
+          <form onSubmit={handleLogin}>
+            <input
+              type="text"
+              placeholder="Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className={styles.input}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className={styles.input}
+            />
+            <label className={styles.checkboxLabel}>
+              <input
+                type="checkbox"
+                checked={isChecked}
+                onChange={() => setIsChecked(!isChecked)}
+              /> Remind me
+            </label>
+            <button type="submit" className={styles.loginButton}>Login</button>
+          </form>
         </div>
-    );
+      </div>
+      <div className={styles.right}>
+        <img src="/login.jpeg" alt="Login" className={styles.googleImage} />
+      </div>
+    </div>
+  );
 }

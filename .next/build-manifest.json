@@ -17,15 +17,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/index.js"
     ],
-    "/Home": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/Home.js"
-    ],
     "/Login": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/Login.js"
+    ],
+    "/UserDetailsPage": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/UserDetailsPage.js"
     ],
     "/_app": [
       "static/chunks/webpack.js",
@@ -37,20 +37,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/events/completed": [
+    "/students": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/events/completed.js"
-    ],
-    "/faculty/teaching": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/faculty/teaching.js"
-    ],
-    "/signup": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/signup.js"
+      "static/chunks/pages/students.js"
     ]
   },
   "ampFirstPages": []

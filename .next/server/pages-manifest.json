@@ -4,8 +4,8 @@
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
   "/Login": "pages/Login.js",
-  "/signup": "pages/signup.js",
-  "/faculty/teaching": "pages/faculty/teaching.js",
-  "/Home": "pages/Home.js",
-  "/events/completed": "pages/events/completed.js"
+  "/students": "pages/students.js",
+  "/UserDetailsPage": "pages/UserDetailsPage.js",
+  "/api/login": "pages/api/login.js",
+  "/api/students": "pages/api/students.js"
 }
